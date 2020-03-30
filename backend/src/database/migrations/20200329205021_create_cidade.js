@@ -1,7 +1,7 @@
 
 exports.up = function(knex) {
     return knex.schema.createTable('cidades', function(table){
-        table.int('cod_cidade').increments().primary();
+        table.increments('cod_cidade');
         table.int('cod_estado').notNullable();
         table.string('nome').notNullable();
 

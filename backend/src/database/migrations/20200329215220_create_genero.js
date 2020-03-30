@@ -1,12 +1,13 @@
 
 exports.up = function(knex) {
     return knex.schema.createTable('generos',function(table){
-        table.int('cod_genero').increments().primary();
+        table.increments('cod_genero');
         table.string('descricao',25).notNullable();
         table.int('inativo').notNullable();
 
         table.int('cod_usuario').notNullable();
-        table.datetime('data_hora_cancelamento',{precision: 6}).defaultTo(knex.fn.now(6));
+        table.datetime('data_hora_cancelamento',{precision: 6});
+        
 
         table.foreign('cod_usuario').references('cod_usuario').inTable('usuarios');
     });

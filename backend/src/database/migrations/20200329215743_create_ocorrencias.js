@@ -1,13 +1,13 @@
 
 exports.up = function(knex) {
     return knex.schema.createTable('ocorrencias',function(table){
-        table.int('cod_ocorrencia').increments().primary();
+        table.increments('cod_ocorrencia');
 
         table.int('cod_dp').notNullable();
         table.int('cod_sequencial').notNullable();
         table.string('numero_rdo').notNullable();
         table.int('cod_usuario_ocorrencia').notNullable();
-        table.datetime('data_hora_ocorrencia',{precision: 6}).defaultTo(knex.fn.now(6));
+        table.datetime('data_hora_ocorrencia',{precision: 6});
         table.int('cod_flagrante').notNullable();
         table.int('cod_genero').notNullable();
         
