@@ -4,7 +4,7 @@ exports.up = function(knex) {
         table.int('cod_dp').notNullable();
         table.string('telefone',13).notNullable();
         
-        table.int('inativo').notNullable();
+        table.int('inativo').default(0);
 
         table.foreign('cod_dp').references('cod_dp').inTable('unidade_policial');
     });
