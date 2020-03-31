@@ -6,6 +6,8 @@ module.exports = {
         const { login, senha } = request.body;
         const pass = cripty(senha);
 
+        //Dúvida e se a dp estiver inativa ??
+
         const user = await connection('usuarios')
         .join('unidade_policial','unidade_policial.cod_dp','=','usuarios.cod_dp')
         .where('login',login)

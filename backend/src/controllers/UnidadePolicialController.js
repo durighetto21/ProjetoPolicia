@@ -20,7 +20,7 @@ module.exports = {
     },
 
     async create(request,response){
-        const {cod_cidade, nome_fantasia, razao_social, cnpj, ie, logradouro, numero, cep, bairro} = request.body;
+        const {cod_cidade, nome_fantasia, razao_social, cnpj, ie, logradouro, numero, cep, bairro, telefone} = request.body;
             
         await connection('unidade_policial').insert({ 
             cod_cidade, 
@@ -32,6 +32,7 @@ module.exports = {
             numero,
             cep,
             bairro,
+            telefone,
         })
       
         return response.status(204).send();  

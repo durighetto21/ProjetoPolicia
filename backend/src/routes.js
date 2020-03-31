@@ -1,7 +1,6 @@
 const express = require('express');
 
 const CidadeController = require('./controllers/CidadeController');
-const EnderecoTelefoneController = require('./controllers/EnderecoTelefoneController');
 const FlagranteController = require('./controllers/FlagranteController');
 const GeneroController = require('./controllers/GeneroController');
 const OcorrenciaController = require('./controllers/OcorrenciaController');
@@ -48,13 +47,18 @@ routes.post('/subtipo_ocorrencia',SubTipoOcorrenciaController.create);
 routes.delete('/subtipo_ocorrencia/:cod_sequencial', SubTipoOcorrenciaController.delete);
 
 //Rotas Ocorrências
+routes.get('/ocorrencia', OcorrenciaController.index);
+routes.get('/ocorrencia', OcorrenciaController.indexFilter);
+routes.post('/ocorrencia', OcorrenciaController.create);
+routes.delete('/ocorrencia/:cod_ocorrencia', OcorrenciaController.delete);
 
 
 //Rotas Cidades
 
+
 //Rotas Estado -> recebendo cod_cidade
 
-//Rotas Telefone
+
 
 
 

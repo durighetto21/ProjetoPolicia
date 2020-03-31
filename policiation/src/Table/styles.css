@@ -1,0 +1,9 @@
+.mx-auto{
+	width:60%;
+	margin-top:2%;
+}
+div.mx-auto > div.container {
+	height: 54px;
+	display: block;
+	margin-top: 10px;
+}
